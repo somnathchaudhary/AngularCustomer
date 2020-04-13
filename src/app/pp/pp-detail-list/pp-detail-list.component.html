@@ -1,0 +1,19 @@
+<p>
+  pp-detail-list works!
+  list of all  the Passport
+</p>
+<table class="table table-hover">
+  <tr>
+<td>PId</td>
+    <td>Passport Holder Name</td>
+  <td>PP Number</td>
+<td>PP Exp</td>
+<td>PP Pin</td></tr>
+<tr *ngFor='let pp of objservice.list'>
+  <td>{{pp.PId}}</td>
+  <td>{{pp.PHolderName}}</td>
+  <td>{{pp.PPNumber}}</td>
+  <td>{{pp.PPExp}}</td>
+  <td>{{pp.PPOCode}}</td>
+</tr>
+</table>
