@@ -18,7 +18,7 @@ list:PPDetail[];
   }
   putPPDetails()
   {
-    return this.objhttp.put(this.ourapiUrl+'/PDetails/'+this.formData.PId,this.formData);
+    return this.objhttp.post(this.ourapiUrl+'/PDetails/'+this.formData.PId,this.formData);
   }
   deleteDetails()
   {

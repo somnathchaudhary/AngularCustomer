@@ -7,6 +7,7 @@ import { PpDetailListComponent } from './pp/pp-detail-list/pp-detail-list.compon
 import { HttpModule }    from '@angular/http';
 //import { PPDetail } from './shared/ppdetail';
 import { PPDetailService } from './shared/ppdetail.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { PPDetailService } from './shared/ppdetail.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    FormsModule 
+
   ],
   providers: [],
   bootstrap: [AppComponent]

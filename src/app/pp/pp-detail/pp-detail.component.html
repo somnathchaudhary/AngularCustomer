@@ -2,3 +2,43 @@
   pp-detail works!
   Registration Of Passport
 </p>
+<form #form="ngForm" autocomplete="off"(submit)="onSubmit(form)">
+<input type = "hidden" name="PId"[value]="objservice.formData.PId">
+        <div class="form-group">
+    <div class="input-group">
+      <div class = "input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fa fa-user-circle-o" aria-hidden="true"[class.green-icon]="PHolderName.valid"[class.green-icon]="PHolderName.invalid"></i>
+        <input name="PHolderName" #PHolderName="ngModel" placeholder="Passport Holder Name"[(ngModel)]="objservice.formData.PHolderName" aria-placeholder="Passport Holder Name"class="form-control"required>
+      </div></div></div></div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fa fa-user-circle-o" aria-hidden="true"[class.green-icon]="PPNumber.valid"
+          [class.green-icon]="PPNumber.invalid && PPNumber.touched"></i>
+        <input name="PPNumber" #PPNumber="ngModel" [(ngModel)]="objservice.formData.PPNumber"placeholder="Passport Number" class="form-control"required maxlength="8" minlength="8">
+      </div></div></div></div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fa fa-user-circle-o" aria-hidden="true"[class.green-icon]="PPExp.valid"
+          [class.green-icon]="PPExp.invalid && PPExp.touched"></i>
+        <input name="PPExp" #PPExp="ngModel" [(ngModel)]="objservice.formData.PPExp"placeholder="mm/yy" class="form-control"required>
+      </div></div></div></div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fa fa-user-circle-o" aria-hidden="true"[class.green-icon]="PPOCode.valid"
+          [class.green-icon]="PPOCode.invalid && PPOCode.touched"></i>
+        <input name="PPOCode" #PPOCode="ngModel" [(ngModel)]="objservice.formData.PPOCode"placeholder="Passport code" class="form-control"required maxlength="6"minlength="6">
+      </div></div></div></div>
+      <div class="form-group">
+        <button class="btn btn-success btn-md btn-block"type="submit"[disabled]="form.invalid">
+          <i class="fa fa-database"></i>Submit Passport Details
+        </button>
+      </div>
+</form>
+
