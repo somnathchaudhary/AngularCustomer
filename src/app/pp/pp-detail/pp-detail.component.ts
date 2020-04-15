@@ -25,7 +25,10 @@ export class PpDetailComponent implements OnInit {
   }}
   onSubmit(form:NgForm)
   {
+    if(this.objservice.formData.PId==0)
     this.insertRecord(form);
+    else this.updateRecord(form);
+
   }
   insertRecord(form:NgForm)
   {
@@ -36,4 +39,13 @@ export class PpDetailComponent implements OnInit {
   },
   err=>{alert('Error'+err);})
   }
-}
+  updateRecord(form:NgForm)
+  {
+    this.objservice.putPPDetails().subscribe(res=>
+      {this.resetForm(form);
+      this.objservice.refreshList();
+    alert('Record updated Successfully');},
+    err=>{alert('Error'+err);})
+  }
+  }
+

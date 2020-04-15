@@ -15,5 +15,7 @@
   <td>{{pp.PPNumber}}</td>
   <td>{{pp.PPExp}}</td>
   <td>{{pp.PPOCode}}</td>
+  <td><button (click)="updateform(pp)"class="btn btn-sm btn-outline-danger">Edit</button></td>
+  <td><button (click)="onDelete(pp.PId)"class="btn btn-sm btn-outline-danger">Delete</button></td>
 </tr>
 </table>

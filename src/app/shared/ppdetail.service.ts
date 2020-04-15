@@ -18,11 +18,11 @@ list:PPDetail[];
   }
   putPPDetails()
   {
-    return this.objhttp.post(this.ourapiUrl+'/PDetails/'+this.formData.PId,this.formData);
+    return this.objhttp.put(this.ourapiUrl+'/PDetails/'+this.formData.PId,this.formData);
   }
-  deleteDetails()
+  deleteDetails(PId)
   {
-    return this.objhttp.delete(this.ourapiUrl +'/PDetails/'+this.formData.PId);
+    return this.objhttp.delete(this.ourapiUrl +'/PDetails/'+PId);
   }
   refreshList()
   {

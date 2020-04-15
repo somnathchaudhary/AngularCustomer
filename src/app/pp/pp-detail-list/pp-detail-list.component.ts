@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PPDetailService } from 'src/app/shared/ppdetail.service';
+import { PPDetail } from 'src/app/shared/ppdetail';
 
 
 @Component({
@@ -14,5 +15,16 @@ export class PpDetailListComponent implements OnInit {
   ngOnInit() {
     this.objservice.refreshList();
   }
-
+  updateform(pp:PPDetail)
+  {
+    this.objservice.formData=Object.assign({},pp);
+  }
+  onDelete(id)
+  {
+    if(confirm("Are you Sure to delete this record"))
+    {
+      this.objservice.deleteDetails(id).subscribe(res=>this.objservice.refreshList(),err=>{err});
+    }
+  
+  }
 }
